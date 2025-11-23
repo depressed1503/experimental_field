@@ -1,0 +1,51 @@
+.file-structure {
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+/* Папка */
+.folder {
+    margin-left: 8px;
+}
+
+.row-wrapper {
+    display: block;
+}
+
+/* Основная строка */
+.folder-row {
+    display: flex;
+    gap: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Строка-детали (collapse) */
+.row-detail {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+        max-height 0.37s ease-in-out,
+        opacity 0.37s ease-in-out;
+}
+
+.row-detail--opened {
+    max-height: 100vh;
+    /* значение-заглушка, но динамическая высота работает */
+    opacity: 1;
+}
+
+/* Внутренний контент */
+.row-detail-inner {
+    padding-left: 20px;
+    border-left: 1px dashed #aaa;
+}
+
+
+/* Файл */
+.file {
+    padding: 2px 0;
+    margin-left: 8px;
+}

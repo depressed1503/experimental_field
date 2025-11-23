@@ -1,0 +1,74 @@
+.collectible-card {
+    width: 300px;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.collectible-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.collectible-card__top__id {
+    color: black;
+    border-radius: 55%;
+    background-color: white;
+    padding: 5px 10px;
+    border: 2px solid black;
+}
+
+.collectible-card__top__header {
+    margin: 0;
+    border: 1px solid red;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.collectible-card__top__type {}
+
+.collectible-card__image {}
+
+.collectible-card__bottom {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto;
+}
+
+.collectible-card__bottom__perks {
+    margin: 0;
+    list-style: none;
+}
+
+.collectible-card__bottom__perks__item {}
+
+.collectible-card__bottom__stats {
+    margin: 0;
+    list-style: none;
+}
+
+.collectible-card__bottom__stats__item {}
+
+.collectible-card__bottom__stats__item__name {}
+
+.collectible-card__bottom__stats__item__value {}
+
+.collectible-card__bottom__description {
+    padding: 10px;
+    margin: 0;
+    grid-column: span 2;
+    background: #383838;
+    background: linear-gradient(0deg, rgba(56, 56, 56, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    line-height: 0.9;
+}
