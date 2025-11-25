@@ -1,0 +1,68 @@
+.mode-button {
+    display: inline-flex;
+    position: relative;
+    font-family: sans-serif;
+}
+
+/* Левый большой сектор */
+.mode-button__main {
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    background: #f6f6f6;
+    border-right: none;
+    cursor: pointer;
+    border-radius: 6px 0 0 6px;
+}
+
+/* Маленький сектор справа */
+.mode-button__current {
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.mode-button__current:hover {
+    background: #f0f0f0;
+}
+
+.chevron {
+    transition: transform 0.2s ease;
+}
+
+.chevron.open {
+    transform: rotate(180deg);
+}
+
+/* Выпадающий список */
+.mode-button__dropdown {
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 50;
+    width: 180px;
+}
+
+.mode-button__dropdown-item {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.mode-button__dropdown-item:hover {
+    background: #f2f2f2;
+}

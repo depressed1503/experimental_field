@@ -13,8 +13,10 @@
     "@reduxjs/toolkit": "^2.10.1",
     "@tanstack/react-router": "^1.136.18",
     "@tanstack/react-router-devtools": "^1.136.18",
+    "bootstrap": "^5.3.8",
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0"
   },

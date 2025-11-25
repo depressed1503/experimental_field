@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings {
+    display: flex;
+}
+
+.btn {
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 300;
+    border-radius: 15px;
+    padding: 7px 10px;
+}
+
+.mail {
+    background-color: rgb(48, 124, 255);
+    color: white;
+}
+
+.analyze {
+    border: 2px solid rgb(48, 124, 255);
+    color: rgb(48, 124, 255);
+}
+
+.filters__block {
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-height: 0;
+    overflow-y: scroll;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.filters__block.open {
+    max-height: 1000px;
+}
+
+.filter__unit {
+    background-color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    color: white;
+    border-radius: 15px;
+}

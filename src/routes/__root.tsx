@@ -16,6 +16,15 @@ function RootLayout() {
                 <Link to="/file_structure" className="[&.active]:font-bold">
                     File Structure
                 </Link>
+                <Link to="/collapsible" className="[&.active]:font-bold">
+                    Collapsible
+                </Link>
+                <Link to="/table" className="[&.active]:font-bold">
+                    Table
+                </Link>
+                <Link to="/button_with_mode_select" className="[&.active]:font-bold">
+                    Button With Mode Select
+                </Link>
             </div>
             <hr />
             <Provider store={store}>

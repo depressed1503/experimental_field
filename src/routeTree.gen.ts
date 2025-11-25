@@ -9,13 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TableRouteImport } from './routes/table'
 import { Route as File_structureRouteImport } from './routes/file_structure'
+import { Route as CollapsibleRouteImport } from './routes/collapsible'
+import { Route as Button_with_mode_selectRouteImport } from './routes/button_with_mode_select'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TableRoute = TableRouteImport.update({
+  id: '/table',
+  path: '/table',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const File_structureRoute = File_structureRouteImport.update({
   id: '/file_structure',
   path: '/file_structure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollapsibleRoute = CollapsibleRouteImport.update({
+  id: '/collapsible',
+  path: '/collapsible',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Button_with_mode_selectRoute = Button_with_mode_selectRouteImport.update({
+  id: '/button_with_mode_select',
+  path: '/button_with_mode_select',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,40 +50,92 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/button_with_mode_select': typeof Button_with_mode_selectRoute
+  '/collapsible': typeof CollapsibleRoute
   '/file_structure': typeof File_structureRoute
+  '/table': typeof TableRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/button_with_mode_select': typeof Button_with_mode_selectRoute
+  '/collapsible': typeof CollapsibleRoute
   '/file_structure': typeof File_structureRoute
+  '/table': typeof TableRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/button_with_mode_select': typeof Button_with_mode_selectRoute
+  '/collapsible': typeof CollapsibleRoute
   '/file_structure': typeof File_structureRoute
+  '/table': typeof TableRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/file_structure'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/button_with_mode_select'
+    | '/collapsible'
+    | '/file_structure'
+    | '/table'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/file_structure'
-  id: '__root__' | '/' | '/about' | '/file_structure'
+  to:
+    | '/'
+    | '/about'
+    | '/button_with_mode_select'
+    | '/collapsible'
+    | '/file_structure'
+    | '/table'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/button_with_mode_select'
+    | '/collapsible'
+    | '/file_structure'
+    | '/table'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  Button_with_mode_selectRoute: typeof Button_with_mode_selectRoute
+  CollapsibleRoute: typeof CollapsibleRoute
   File_structureRoute: typeof File_structureRoute
+  TableRoute: typeof TableRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/table': {
+      id: '/table'
+      path: '/table'
+      fullPath: '/table'
+      preLoaderRoute: typeof TableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/file_structure': {
       id: '/file_structure'
       path: '/file_structure'
       fullPath: '/file_structure'
       preLoaderRoute: typeof File_structureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collapsible': {
+      id: '/collapsible'
+      path: '/collapsible'
+      fullPath: '/collapsible'
+      preLoaderRoute: typeof CollapsibleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/button_with_mode_select': {
+      id: '/button_with_mode_select'
+      path: '/button_with_mode_select'
+      fullPath: '/button_with_mode_select'
+      preLoaderRoute: typeof Button_with_mode_selectRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,7 +158,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  Button_with_mode_selectRoute: Button_with_mode_selectRoute,
+  CollapsibleRoute: CollapsibleRoute,
   File_structureRoute: File_structureRoute,
+  TableRoute: TableRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
