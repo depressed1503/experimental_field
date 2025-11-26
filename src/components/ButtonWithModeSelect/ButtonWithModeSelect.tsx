@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Mail, Download, ChevronDown } from "lucide-react"
 import "./ButtonWithModeSelect.css"
 import type { JSX } from "react"
+import { Form } from "react-bootstrap"
 
 type Mode = "mail" | "download"
 
@@ -42,6 +43,7 @@ export default function ButtonWithModeSelect() {
                             {opt.label}
                         </div>
                     ))}
+                    <Form.Control style={{minWidth: "max-content"}} placeholder="example@example.com"></Form.Control>
                 </div>
             )}
         </div>

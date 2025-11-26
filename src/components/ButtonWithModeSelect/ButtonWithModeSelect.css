@@ -4,14 +4,27 @@
     font-family: sans-serif;
 }
 
+.mode-button > * {
+    transition: all 0.3s ease-in-out;
+}
+
 /* Левый большой сектор */
 .mode-button__main {
     padding: 8px 14px;
     border: 1px solid #ccc;
-    background: #f6f6f6;
+    background: #fff;
     border-right: none;
     cursor: pointer;
     border-radius: 6px 0 0 6px;
+}
+
+.mode-button:hover > .mode-button__main, .mode-button:hover > .mode-button__current {
+    border-color: rgb(43, 130, 230);
+}
+
+.mode-button__main:active {
+    background-color: rgb(43, 130, 230);
+    color: #fff;
 }
 
 /* Маленький сектор справа */
@@ -44,7 +57,7 @@
 .mode-button__dropdown {
     position: absolute;
     top: 100%;
-    right: -50%;
+    left: 0;
     margin-top: 4px;
     background: white;
     border: 1px solid #ccc;
@@ -52,7 +65,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     z-index: 50;
-    width: 180px;
+    min-width: max-content;
+    padding: 5px;
 }
 
 .mode-button__dropdown-item {
